@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+
+<head>
+<link rel="stylesheet" type="text/css" href="./kcstyle.css">
+
+<h1> Kancolle Visualization</h1>
+</head>
+
+<body>
+	<div id="container">
+		<div id="chart">
+		
+		</div>
+		<div id="sidebar">
+			<div id="infobox">
+				<span class="shipTitle">
+						<label>Name:</label>
+						<input id="shipName" type="text" name="shipname">
+						<button type="button" id="searchBtn">Search</button>
+				</span><br>
+				<span class="statLabels"> 
+					<label>Firepower:</label><br>
+					<label>Torpedo:</label><br>
+					<label>Anti-Air:</label><br>
+					<label>Anti-Sub:</label><br>
+					<label>Line of Sight:</label><br>
+					<label>Luck:</label><br>
+					<label>Health:</label><br>
+					<label>Armor:</label><br>
+					<label>Evasion:</label><br>
+					<label>Planes:</label><br>
+					<label>Fuel Cost:</label><br>
+					<label>Ammo Cost:</label><br>
+				</span>
+				<span class="statValues">
+					<label id="fpValue"></label><br>
+					<label id="torpValue"></label><br>
+					<label id="aaValue"></label><br>
+					<label id="aswValue"></label><br>
+					<label id="losValue"></label><br>
+					<label id="luckValue"></label><br>
+					<label id="hpValue"></label><br>
+					<label id="armorValue"></label><br>
+					<label id="evaValue"></label><br>
+					<label id="planeValue"></label><br>
+					<label id="fCostValue"></label><br>
+					<label id="aCostValue"></label><br>
+				</span>
+			</div>
+		</div>
+	</div>
+	<div id="chart-buttons">
+		<button type="button" id="resetBtn" class="buttons">Reset Chart</button>
+	</div>
+	<div id="legend">	
+	</div>
+	<div id="filterbox">
+		<div class="column-left">
+			<h2>Ship Type</h2>
+			<label><input type="checkbox" class="shipType" id="dd"> Destroyer</label><br>
+			<label><input type="checkbox" class="shipType" id="cl"> Light Cruiser </label><br>
+			<label><input type="checkbox" class="shipType" id="ca"> Heavy Cruiser </label><br>
+			<label><input type="checkbox" class="shipType" id="bb"> Battleships </label><br>
+			<label><input type="checkbox" class="shipType" id="cvl"> Light Carriers </label><br>
+			<label><input type="checkbox" class="shipType" id="cv"> Carriers </label><br>
+			<label><input type="checkbox" class="shipType" id="ss"> Submarines </label><br>
+		</div>
+		<div class="column-center">
+			<h2>Ship Stats</h2>
+			<label><input type="checkbox" class="shipStat" id="Firepower"> Firepower </label><br>
+			<label><input type="checkbox" class="shipStat" id="Torpedo"> Torpedo </label><br>
+			<label><input type="checkbox" class="shipStat" id="Anti_Air"> Anti-Air </label><br>
+			<label><input type="checkbox" class="shipStat" id="Anti_Sub"> Anti-Sub </label><br>
+			<label><input type="checkbox" class="shipStat" id="LoS"> Line of Sight </label><br>
+			<label><input type="checkbox" class="shipStat" id="Luck"> Luck </label><br>
+			<label><input type="checkbox" class="shipStat" id="Health"> Health </label><br>
+			<label><input type="checkbox" class="shipStat" id="Armor"> Armor </label><br>
+			<label><input type="checkbox" class="shipStat" id="Evasion"> Evasion </label><br>
+			<label><input type="checkbox" class="shipStat" id="Planes"> Planes </label><br>
+			<label><input type="checkbox" class="shipStat" id="Fuel_Cost"> Fuel Cost </label><br>
+			<label><input type="checkbox" class="shipStat" id="Ammo_Cost"> Ammo Cost </label><br>
+		</div>
+		<div class="column-right">
+			<h2>Construction Recipes</h2>
+			<label><input type="checkbox" class="construction" id="dd1"> 30/30/30/30 </label><br>
+			<label><input type="checkbox" class="construction" id="dd2"> 30/30/999/30 </label><br>
+			<label><input type="checkbox" class="construction" id="cl1"> 250/30/200/30 </label><br>
+			<label><input type="checkbox" class="construction" id="cl2"> 250/30/200/31 </label><br>
+			<label><input type="checkbox" class="construction" id="cl3"> 250/130/200/30 </label><br>
+			<label><input type="checkbox" class="construction" id="cl4"> 250/30/250/30 </label><br>
+			<label><input type="checkbox" class="construction" id="cl5"> 250/31/200/30 </label><br>
+			<label><input type="checkbox" class="construction" id="cvl1"> 300/30/400/330 </label><br>
+			<label><input type="checkbox" class="construction" id="cvl2"> 300/300/600/600 </label><br>
+			<label><input type="checkbox" class="construction" id="cv1"> 300/30/400/300 </label><br>
+			<label><input type="checkbox" class="construction" id="cv2"> 350/30/600/350 </label><br>
+			<label><input type="checkbox" class="construction" id="cv3"> 301/31/502/400 </label><br>
+			<label><input type="checkbox" class="construction" id="bb1"> 400/30/600/30 </label><br>
+			<label><input type="checkbox" class="construction" id="bb2"> 400/100/600/30 </label><br>
+		</div>
+		<div class="footer2">
+			<div class="column-left-footer">
+				<button type="button" class="filterBtns" id="SAType">Select All</button>
+				<button type="button" class="filterBtns" id="CAType">Clear All</button>
+			</div>
+			<div class="column-center-footer">
+				<button type="button" class="filterBtns" id="SAStat">Select All</button>
+				<button type="button" class="filterBtns" id="CAStat">Clear All</button>
+			</div>
+			<div class="column-right-footer">
+				<button type="button" class="filterBtns" id="SAConstruction">Select All</button>
+				<button type="button" class="filterBtns" id="CAConstruction">Clear All</button>
+			</div>
+		</div>
+	</div>
+
+
+	<footer>
+		<p>Kancolle Visualization by: Brandon Yip</p>
+		<p>Other works: website</p>
+		<p>References: Some code taken from parallel coordinates</p>
+	</footer>
+<!--The files connected to Kancolle visualization-->
+<!--<script src="./d3.v3.min.js" type="text/javascript"></script>-->
+<script src="./d3.v3.min.js" type="text/javascript"></script>
+<script src="./kancolleChart4.js" type="text/javascript"></script>
+
+
+<!--<script src="./countries.js" type="text/javascript"></script>-->
+
+</body>
+</html>
