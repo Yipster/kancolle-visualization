@@ -238,7 +238,7 @@ label {
 	font-family: Tahoma, Geneva, sans-serif;
 }
 
-label:hover{
+.checkboxes:hover{
 	color: green;
 }
 
