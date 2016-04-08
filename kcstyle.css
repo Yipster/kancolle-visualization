@@ -1,3 +1,13 @@
+@font-face {
+  font-family: 'Gotham';
+  src: url('fonts/Gotham-Bold.eot'); /* IE9 Compat Modes */
+  src: url('fonts/Gotham-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+     url('fonts/Gotham-Bold.woff') format('woff'), /* Modern Browsers */
+     url('fonts/Gotham-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+     url('fonts/Gotham-Bold.svg#svgFontName') format('svg'); /* Legacy iOS */
+   font-weight: 700;
+   font-style: normal;
+ }
 
 /*Styles for the main components of the website*/
 #container {
@@ -22,7 +32,7 @@
 
 #infobox {
 	width: 200px;
-	height: 310px;
+	height: 320px;
 	margin-top: 20px;
 	border: 2px solid black;
 	border-radius: 4px;
@@ -44,8 +54,7 @@
 }
 
 footer {
-	background-color: steelblue;
-	
+	font-family: Tahoma, Geneva, sans-serif;
 }
 
 
@@ -221,6 +230,7 @@ input {
 }
 
 h1, h2 {
+	
 	font-family: Tahoma, Geneva, sans-serif;
 }
 
@@ -228,7 +238,7 @@ label {
 	font-family: Tahoma, Geneva, sans-serif;
 }
 
-label:hover{
+.checkboxes:hover{
 	color: green;
 }
 
