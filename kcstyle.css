@@ -32,7 +32,7 @@
 
 #infobox {
 	width: 200px;
-	height: 320px;
+	height: 340px;
 	margin-top: 20px;
 	border: 2px solid black;
 	border-radius: 4px;
@@ -260,6 +260,12 @@ svg {
   stroke: #ddd;
   /*shape-rendering: crispEdges;*/
   stroke-width: 1;
+}
+
+.foreground path{
+  fill: none;
+  stroke: black;
+  stroke-width: 2;
 }
 
 .ddForeground path {

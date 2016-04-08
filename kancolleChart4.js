@@ -409,8 +409,8 @@ function oneShip(ship) {
 	svg.selectAll(".cvForeground").remove();
 	svg.selectAll(".ssForeground").remove();
 	d3.csv("kancolle.csv", function(kancolle){
-		ddForeground = svg.append("g")
-		.attr("class", "ddForeground")
+		foreground = svg.append("g")
+		.attr("class", "foreground")
 		.selectAll("path")
 		.data(kancolle.filter(function (d){
 			return d.name == ship.name;
@@ -431,6 +431,7 @@ function fillInfoBox(ship) {
 	console.log(ship)
 	document.getElementById("shipName").value = ship.name;
 	
+	d3.select("#typeValue").text(ship.type);
 	d3.select("#fpValue").text(ship.Firepower);
 	d3.select("#torpValue").text(ship.Torpedo);
 	d3.select("#aaValue").text(ship.Anti_Air);
@@ -565,177 +566,6 @@ function createButtons() {
 	d3.selectAll("input").on("change", function(){
 		updateVis();
 	});
-	
-	//Creates the events for the buttons in the Ship Type column
-	/*var dd = d3.select("#dd");
-	dd.on("change", function(d){
-		updateVis();
-	});
-	
-	var cl = d3.select("#cl");
-	cl.on("change", function(d){
-		updateVis();
-	});
-	
-	var ca = d3.select("#ca");
-	ca.on("change", function(d){
-		updateVis();
-	});
-	
-	var bb = d3.select("#bb");
-	bb.on("change", function(d){
-		updateVis();
-	});
-	
-	var cvl = d3.select("#cvl");
-	cvl.on("change", function(d){
-		updateVis();
-	});
-	
-	
-	var cv = d3.select("#cv");
-	cv.on("change", function(d){
-		updateVis();
-	});
-	
-	var ss = d3.select("#ss");
-	ss.on("change", function(d){
-		updateVis();
-	});	*/
-	
-	//After this point, it creates the events for the checkboxes in Ship Stats column
-	/*
-	var firepower = d3.select("#Firepower");
-	firepower.on("change", function(d){
-		updateVis();
-	});
-	
-	var torpedo = d3.select("#Torpedo");
-	torpedo.on("change", function(d){
-		updateVis();
-	});
-	
-	var antiair = d3.select("#Anti-Air");
-	antiair.on("change", function(d){
-		updateVis();
-	});
-	
-	var antisub = d3.select("#Anti-Sub");
-	antisub.on("change", function(d){
-		updateVis();
-	});
-
-	var los = d3.select("#LoS");
-	los.on("change", function(d){
-		updateVis();
-	});
-	
-	var luck = d3.select("#Luck");
-	luck.on("change", function(d){
-		updateVis();
-	});
-	
-	var hp = d3.select("#Health");
-	hp.on("change", function(d){
-		updateVis();
-	});
-	
-	var armor = d3.select("#Armor");
-	armor.on("change", function(d){
-		updateVis();
-	});
-	
-	var evasion = d3.select("#Evasion");
-	evasion.on("change", function(d){
-		updateVis();
-	});
-	
-	var plane = d3.select("#Planes");
-	plane.on("change", function(d){
-		updateVis();
-	});
-	
-	var fCost = d3.select("#Fuel_Cost");
-	fCost.on("change", function(d){
-		updateVis();
-	});
-	
-	var aCost = d3.select("#Ammo_Cost");
-	aCost.on("change", function(d){
-		updateVis();
-	});*/
-	
-	
-	/*Checkboxes for Construction Recipes*/
-	/*var dd1 = d3.select("#dd1");
-		dd1.on("change", function(d){
-		updateVis();
-	});
-	
-	var dd2 = d3.select("#dd2");
-		dd2.on("change", function(d){
-		updateVis();
-	});
-	
-	var cl1 = d3.select("#cl1");
-		cl1.on("change", function(d){
-		updateVis();
-	});
-	
-	var cl2 = d3.select("#cl2");
-		cl2.on("change", function(d){
-		updateVis();
-	});
-	
-	var cl3 = d3.select("#cl3");
-		cl3.on("change", function(d){
-		updateVis();
-	});
-	
-	var cl4 = d3.select("#cl4");
-		cl4.on("change", function(d){
-		updateVis();
-	});
-	
-	var cl5 = d3.select("#cl5");
-		cl5.on("change", function(d){
-		updateVis();
-	});
-	
-	var cvl1 = d3.select("#cvl1");
-		cvl1.on("change", function(d){
-		updateVis();
-	});
-	
-	var cvl2 = d3.select("#cvl2");
-		cvl2.on("change", function(d){
-		updateVis();
-	});
-	
-	var cv1 = d3.select("#cv1");
-		cv1.on("change", function(d){
-		updateVis();
-	});
-	
-	var cv2 = d3.select("#cv2");
-		cv2.on("change", function(d){
-		updateVis();
-	});
-	
-	var cv3 = d3.select("#cv3");
-		cv3.on("change", function(d){
-		updateVis();
-	});
-	
-	var bb1 = d3.select("#bb1");
-		bb1.on("change", function(d){
-		updateVis();
-	});
-	
-	var bb2 = d3.select("#bb2");
-		bb2.on("change", function(d){
-		updateVis();
-	});*/
 	
 	/*After this point, its making events for the select all/clear all buttons*/
 	var saType = d3.select("#SAType");
