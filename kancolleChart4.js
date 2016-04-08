@@ -2,7 +2,7 @@
 
 
 //may need to change margins
-var margin = {top: 30, right: 10, bottom: 10, left: 0},
+var margin = {top: 30, right: 0, bottom: 10, left: 0},
     width = 1000 - margin.left - margin.right,
     height = 600 - margin.top - margin.bottom;
 
